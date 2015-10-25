@@ -1,0 +1,114 @@
+-> Dockerize your Development Workstation <-
+============================================
+
+-> Armin Čoralić <-
+
+\                  ##        .
+\            ## ## ##       ==
+\         ## ## ## ##      ===
+\     /""""""""""""""""\\\___/ ===
+\~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~  /  ===- ~~~
+      \\\______ o          \_\_/
+        \\\    \\\        \_\_/
+         \\\____\\\______/
+
+-------------------------------------------------
+-> Conclusion <-
+================
+
+<br>
+* There is a docker image for that
+
+<br>
+* Don't install software run a docker image
+
+<br>
+* Share the docker image with the Team and CI
+
+------------------------------------------------------
+-> There is a docker images for that <-
+=======================================
+
+<br>
+Selenium HUB
+
+    docker run -d -p 4444:4444 -m 1024m --name selenium-hub selenium/hub:2.48.2
+
+Selenium NODE
+
+    docker run -d -m 1024m -p 5900:5900 --link selenium-hub:hub selenium/node-firefox-debug:2.48.2
+
+Cassandra
+
+    docker run -it --rm -m 1024m --name some-cassandra -p 9042:9042 cassandra:2.2
+
+Cassandra cqlsh
+
+    docker run -it --rm -m 1024m --link some-cassandra:cassandra --rm cassandra:2.2 cqlsh cassandra
+
+-------------------------------------------------
+-> Don't install software run a docker image <-
+===============================================
+
+<br>
+Atom
+
+    docker run --rm -e DISPLAY=192.168.15.1:0 -v ${HOME}:${HOME}:ro -w ${PWD} jess/atom
+
+Node - npm
+
+    docker run -it --rm -m 2048m -v ${HOME}:${HOME}:rw -w ${PWD} selenium-dev npm
+
+Gulp
+
+    docker run -it --rm -m 2048m -v ${HOME}:${HOME}:rw -w ${PWD} -p 3000:3000 selenium-dev gulp
+
+-------------------------------------------------
+-> Share the docker image with the Team and CI <-
+=================================================
+
+<br>
+* README -> install bunch of things
+
+<br>
+* NOTHING -> ask people install bunch of things
+
+<br>
+* VM -> why use VM when you have docker
+
+-------------------------------------------------
+-> Notes <-
+===========
+
+<br>
+* Linux vs OSX
+
+<br>
+* VirtualBox vs VMware
+
+<br>
+* Aliases Aliases Aliases
+
+<br>
+* Thank's to Jess Frazelle
+
+-------------------------------------------------
+-> Conclusion <-
+================
+
+* There is a docker image for that
+
+* Don't install software run a docker image
+
+* Share the docker image with the Team and CI
+
+-------------------------------------------------
+
+████████╗██╗  ██╗███████╗    ███████╗███╗   ██╗██████╗
+╚══██╔══╝██║  ██║██╔════╝    ██╔════╝████╗  ██║██╔══██╗
+   ██║   ███████║█████╗      █████╗  ██╔██╗ ██║██║  ██║
+   ██║   ██╔══██║██╔══╝      ██╔══╝  ██║╚██╗██║██║  ██║
+   ██║   ██║  ██║███████╗    ███████╗██║ ╚████║██████╔╝
+   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚══════╝╚═╝  ╚═══╝╚═════╝
+
+
