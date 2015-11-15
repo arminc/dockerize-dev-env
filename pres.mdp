@@ -68,7 +68,9 @@ Atom
 -> Clean development environment <-
 ======================================
 
+<br>
 MDP
+
     docker run -it --rm -m 265m -v ${HOME}:${HOME}:ro -w ${PWD} mdp mdp
 
 Node - npm
@@ -112,6 +114,7 @@ Gulp
 -> Conclusion <-
 ================
 
+<br>
 * Dockerizing your environment saves time
 
 -------------------------------------------------
