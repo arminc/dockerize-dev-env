@@ -13,21 +13,34 @@
          \\\____\\\______/
 
 -------------------------------------------------
--> Conclusion <-
-================
+-> Consultancy <-
+===================
 
 <br>
-* There is a docker image for that
+* README -> install bunch of things
 
 <br>
-* Don't install software run a docker image
+* NOTHING -> ask people and install bunch of things
 
 <br>
-* Share the docker image with the Team and CI
+* VM -> ready to use but heavy
 
 ------------------------------------------------------
--> There is a docker images for that <-
-=======================================
+-> Why Dockerize? <-
+===========================
+
+<br>
+* Quick and Easy way to try or use new software
+
+<br>
+* Clean development environment
+
+<br>
+* Speed
+
+------------------------------------------------------
+-> Quick and Easy way to try or use new software <-
+====================================================
 
 <br>
 Selenium HUB
@@ -38,22 +51,25 @@ Selenium NODE
 
     docker run -d -m 1024m -p 5900:5900 --link selenium-hub:hub selenium/node-firefox-debug:2.48.2
 
-Cassandra
+Postgres
 
-    docker run -it --rm -m 1024m --name some-cassandra -p 9042:9042 cassandra:2.2
+    docker run -it --rm -m 1024m --name postgres -p 5432:5432 dhlpostgres'
 
-Cassandra cqlsh
-
-    docker run -it --rm -m 1024m --link some-cassandra:cassandra --rm cassandra:2.2 cqlsh cassandra
-
--------------------------------------------------
--> Don't install software run a docker image <-
-===============================================
+-------------------------------------------------------
+-> Quick and Easy way to try or use new software <-
+======================================================
 
 <br>
 Atom
 
     docker run --rm -e DISPLAY=192.168.15.1:0 -v ${HOME}:${HOME}:ro -w ${PWD} jess/atom
+
+-------------------------------------------------------
+-> Clean development environment <-
+======================================
+
+MDP
+    docker run -it --rm -m 265m -v ${HOME}:${HOME}:ro -w ${PWD} mdp mdp
 
 Node - npm
 
@@ -64,17 +80,17 @@ Gulp
     docker run -it --rm -m 2048m -v ${HOME}:${HOME}:rw -w ${PWD} -p 3000:3000 selenium-dev gulp
 
 -------------------------------------------------
--> Share the docker image with the Team and CI <-
+-> Speed <-
 =================================================
 
 <br>
-* README -> install bunch of things
+* Setup time reduced
 
 <br>
-* NOTHING -> ask people install bunch of things
+* Reproducible
 
 <br>
-* VM -> why use VM when you have docker
+* Shareable
 
 -------------------------------------------------
 -> Notes <-
@@ -96,11 +112,7 @@ Gulp
 -> Conclusion <-
 ================
 
-* There is a docker image for that
-
-* Don't install software run a docker image
-
-* Share the docker image with the Team and CI
+* Dockerizing your environment saves time
 
 -------------------------------------------------
 
